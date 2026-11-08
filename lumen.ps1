@@ -1314,7 +1314,7 @@ class Interpreter {
         if ($expr.isIndex) {
             $index = $this.Evaluate($expr.index)
             if ($obj -is [System.Collections.Generic.List[object]]) {
-                return $obj[[int]$index]
+                return $obj[[int]$index - 1]
             }
             if ($obj -is [hashtable]) {
                 $key = [string]$index
@@ -1339,7 +1339,7 @@ class Interpreter {
             $obj = $this.Evaluate($expr.object)
             $index = $this.Evaluate($expr.index)
             if ($obj -is [System.Collections.Generic.List[object]]) {
-                $obj[[int]$index] = $value
+                $obj[[int]$index - 1] = $value
             } elseif ($obj -is [hashtable]) {
                 $obj[[string]$index] = $value
             } else {

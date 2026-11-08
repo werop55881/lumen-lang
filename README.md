@@ -86,7 +86,7 @@ print: 10 / 2            # 5
 
 ```lumen
 nums = [1, 2, 3]
-print: nums[0]           # 1
+print: nums[1]           # 10
 print: len(nums)         # 3
 ```
 
@@ -257,7 +257,7 @@ print: add(3, 4); # 7
 ```lumen
 let nums = [1, 2, 3, 4, 5];
 print: len(nums);    # 5
-print: nums[0];      # 1
+print: nums[1];      # 10
 
 let person = {name: "Lumen", age: 1};
 print: person.name;  # Lumen
