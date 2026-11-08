@@ -10,7 +10,7 @@
                 "-ExecutionPolicy",
                 "Bypass",
                 "-File",
-                "${workspaceFolder}/run-lumen.ps1",
+                "${workspaceFolder}/lumen.ps1",
                 "${file}"
             ],
             "group": {
@@ -30,7 +30,7 @@
         {
             "label": "Run Current File (Terminal)",
             "type": "shell",
-            "command": "pwsh -NoProfile -ExecutionPolicy Bypass -File \"${workspaceFolder}/run-lumen.ps1\" \"${file}\"",
+            "command": "pwsh -NoProfile -ExecutionPolicy Bypass -File \"${workspaceFolder}/lumen.ps1\" \"${file}\"",
             "group": "none",
             "problemMatcher": []
         }
