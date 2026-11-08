@@ -45,7 +45,7 @@ Your files must end with `.ln` (for example, `myprogram.ln`).
 ### Print something
 
 ```lumen
-print "Hello, world!";
+print: "Hello, world!";
 ```
 
 ### Make a variable
@@ -54,49 +54,49 @@ You don't need a special word to start a variable. Just write it:
 
 ```lumen
 name = "Lumen"
-print name
+print: name
 ```
 
 You can also use `let` if you want:
 
 ```lumen
 let age = 5
-print age
+print: age
 ```
 
 ### Use text (strings)
 
 ```lumen
-print "Hello"
-print 'Hello'           # single quotes also work
+print: "Hello"
+print: 'Hello'           # single quotes also work
 who = "Lumen"
-print "Hello {who}!"    # put a variable inside {}
+print: "Hello {who}!"    # put a variable inside {}
 ```
 
 ### Use numbers and math
 
 ```lumen
-print 2 + 3             # 5
-print 10 - 4            # 6
-print 3 * 7             # 21
-print 10 / 2            # 5
+print: 2 + 3             # 5
+print: 10 - 4            # 6
+print: 3 * 7             # 21
+print: 10 / 2            # 5
 ```
 
 ### Make a list
 
 ```lumen
 nums = [1, 2, 3]
-print nums[0]           # 1
-print len(nums)         # 3
+print: nums[0]           # 1
+print: len(nums)         # 3
 ```
 
 ### Make a map (like a dictionary)
 
 ```lumen
 person = {name: "Lumen", age: 1}
-print person.name       # Lumen
+print: person.name       # Lumen
 person.age = 2
-print person.age        # 2
+print: person.age        # 2
 ```
 
 ### True, false, and nothing
@@ -108,9 +108,9 @@ print person.age        # 2
 
 ```lumen
 if n > 3 {
-    print "big"
+    print: "big"
 } else {
-    print "small"
+    print: "small"
 }
 ```
 
@@ -119,7 +119,7 @@ if n > 3 {
 ```lumen
 i = 0
 while i < 3 {
-    print i
+    print: i
     i = i + 1
 }
 ```
@@ -128,7 +128,7 @@ while i < 3 {
 
 ```lumen
 for n in [1, 2, 3] {
-    print n
+    print: n
 }
 ```
 
@@ -139,7 +139,7 @@ def add(a, b) {
     return a + b
 }
 
-print add(3, 4)         # 7
+print: add(3, 4)         # 7
 ```
 
 Short functions can go on one line:
@@ -161,16 +161,16 @@ class Dog {
 }
 
 d = Dog("Rex")
-print d.speak()         # Rex barks!
+print: d.speak()         # Rex barks!
 ```
 
 ### Handle errors with `try` and `catch`
 
 ```lumen
 try {
-    print 10 / 0
+    print: 10 / 0
 } catch e {
-    print "Something went wrong: {e}"
+    print: "Something went wrong: {e}"
 }
 ```
 
@@ -178,14 +178,14 @@ try {
 
 ```lumen
 import "math_utils.ln"
-print square(5)
+print: square(5)
 ```
 
 ## Built-in commands
 
 | Command | What it does |
 |---------|-------------|
-| `print x` | Shows `x` on the screen |
+| `print: x` | Shows `x` on the screen |
 | `len(x)` | Counts items in a list, map, or text |
 | `clock` | Gives the current time in seconds |
 | `abs(x)` | Absolute value of a number |
@@ -204,15 +204,15 @@ Save any of these as `something.ln` and run with `lumen something.ln`.
 ### Hello, world!
 
 ```lumen
-print "Hello, world!";
+print: "Hello, world!";
 ```
 
 ### Math
 
 ```lumen
-print 40 + 2;
-print 3 * (1 + 2);
-print 10 / 4;
+print: 40 + 2;
+print: 3 * (1 + 2);
+print: 10 / 4;
 ```
 
 ### If / while / for
@@ -220,17 +220,17 @@ print 10 / 4;
 ```lumen
 let n = 5;
 if (n > 3) {
-    print "big";
+    print: "big";
 }
 
 let i = 0;
 while (i < 3) {
-    print i;
+    print: i;
     i = i + 1;
 }
 
 for (j in [0, 1, 2]) {
-    print j;
+    print: j;
 }
 ```
 
@@ -244,23 +244,23 @@ fun fib(n) {
     return fib(n - 1) + fib(n - 2);
 }
 
-print fib(10);   # 55
+print: fib(10);   # 55
 
 fun add(a, b) {
     return a + b;
 }
-print add(3, 4); # 7
+print: add(3, 4); # 7
 ```
 
 ### Lists and maps
 
 ```lumen
 let nums = [1, 2, 3, 4, 5];
-print len(nums);    # 5
-print nums[0];      # 1
+print: len(nums);    # 5
+print: nums[0];      # 1
 
 let person = {name: "Lumen", age: 1};
-print person.name;  # Lumen
+print: person.name;  # Lumen
 ```
 
 ### Classes
@@ -276,16 +276,16 @@ class Dog {
 }
 
 let d = Dog("Rex");
-print d.speak();    # Rex barks!
+print: d.speak();    # Rex barks!
 ```
 
 ### Errors
 
 ```lumen
 try {
-    print 10 / 0;
+    print: 10 / 0;
 } catch (e) {
-    print "caught: {e}";
+    print: "caught: {e}";
 }
 ```
 

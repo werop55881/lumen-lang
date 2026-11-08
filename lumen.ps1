@@ -460,6 +460,7 @@ class Parser {
     }
 
     [Stmt] PrintStatement() {
+        $this.Consume("COLON", "Expect ':' after 'print'.")
         $value = $this.Expression()
         return [StmtPrint]::new($value)
     }
