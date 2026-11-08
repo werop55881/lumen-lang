@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Lumen File",
+            "type": "pwsh",
+            "request": "launch",
+            "script": "${workspaceFolder}/lumen.ps1",
+            "args": [
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${relativeFile}"
+            ],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

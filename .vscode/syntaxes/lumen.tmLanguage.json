@@ -1,0 +1,124 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Lumen",
+    "scopeName": "source.lumen",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#number"
+        },
+        {
+            "include": "#keyword"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#function"
+        },
+        {
+            "include": "#class"
+        },
+        {
+            "include": "#operator"
+        },
+        {
+            "include": "#punctuation"
+        },
+        {
+            "include": "#variable"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "name": "comment.block.lumen",
+                    "begin": "/\\*",
+                    "end": "\\*/"
+                },
+                {
+                    "name": "comment.line.double-slash.lumen",
+                    "begin": "//",
+                    "end": "\\n"
+                },
+                {
+                    "name": "comment.line.number-sign.lumen",
+                    "begin": "#",
+                    "end": "\\n"
+                }
+            ]
+        },
+        "string": {
+            "name": "string.quoted.double.lumen",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.lumen",
+                    "match": "\\\\."
+                },
+                {
+                    "name": "variable.interpolation.lumen",
+                    "match": "\\{[A-Za-z_][A-Za-z0-9_]*\\}"
+                }
+            ]
+        },
+        "string_single": {
+            "name": "string.quoted.single.lumen",
+            "begin": "'",
+            "end": "'",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.lumen",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "number": {
+            "name": "constant.numeric.lumen",
+            "match": "\\b\\d+(\\.\\d+)?\\b"
+        },
+        "keyword": {
+            "name": "keyword.control.lumen",
+            "match": "\\b(and|break|catch|class|def|else|false|finally|for|from|if|import|in|is|let|nil|None|or|print|return|super|this|throw|try|True|False|while)\\b"
+        },
+        "constant": {
+            "name": "constant.language.lumen",
+            "match": "\\b(True|False|nil|None)\\b"
+        },
+        "function": {
+            "name": "entity.name.function.lumen",
+            "match": "\\b(def|fun)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+            "captures": {
+                "1": "keyword.other.lumen",
+                "2": "entity.name.function.lumen"
+            }
+        },
+        "class": {
+            "name": "entity.name.type.class.lumen",
+            "match": "\\b(class)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+            "captures": {
+                "1": "keyword.other.lumen",
+                "2": "entity.name.type.class.lumen"
+            }
+        },
+        "operator": {
+            "name": "keyword.operator.lumen",
+            "match": "==|!=|<=|>=|<|>|\\+|-|\\*|/|%|\\*\\*|!|and|or|\\?\\?|=|:|\\(|\\)|\\[|\\]|\\{|\\}|,|\\."
+        },
+        "punctuation": {
+            "name": "punctuation.separator.statement.lumen",
+            "match": ";"
+        },
+        "variable": {
+            "name": "variable.parameter.lumen",
+            "match": "\\bthis\\b"
+        }
+    }
+}
